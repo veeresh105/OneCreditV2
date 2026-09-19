@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-navy: #0B2E6B;
+    --color-navy-dark: #071F47;
+    --color-navy-light: #12449C;
+    --color-gold: #D4A017;
+    --color-gold-hover: #B88910;
+    --color-gold-light: #FBF5E6;
+    --color-green: #16A34A;
+    --color-green-hover: #15803D;
+    --color-bg: #FFFFFF;
+    --color-surface: #F8FAFC;
+    --color-text-main: #1E293B;
+    --color-text-muted: #64748B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--color-text-main);
+    background-color: var(--color-bg);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Custom utility colors */
+.bg-navy { background-color: #0B2E6B; }
+.bg-navy-dark { background-color: #071F47; }
+.bg-navy-light { background-color: #12449C; }
+.text-navy { color: #0B2E6B; }
+.border-navy { border-color: #0B2E6B; }
+
+.bg-gold { background-color: #D4A017; }
+.bg-gold-light { background-color: #FDF9F0; }
+.text-gold { color: #D4A017; }
+.border-gold { border-color: #D4A017; }
+
+.bg-brand-green { background-color: #16A34A; }
+.text-brand-green { color: #16A34A; }
+
+/* Subtle button animations */
+.btn-primary {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(11, 46, 107, 0.25);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-green {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.3);
+}
+.btn-green:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background-color: #F1F5F9;
+}
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Service Card Hover Effect */
+.loan-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.loan-card:hover {
+  transform: translateY(-5px);
+  border-color: #D4A017;
+  box-shadow: 0 16px 32px -8px rgba(11, 46, 107, 0.1);
+}
+
+.loan-card .card-arrow {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.loan-card:hover .card-arrow {
+  transform: translateX(5px);
+  color: #D4A017;
+}
+
+/* Scroll Fade Up Elements */
+.fade-up-element {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up-element.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal Transition */
+.modal-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  opacity: 0;
+  transform: scale(0.95) translateY(12px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.is-open .modal-content {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Mobile Slide-in Drawer */
+.mobile-nav-drawer {
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* Custom Scrollbar for clean aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

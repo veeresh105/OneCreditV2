@@ -1,0 +1,6 @@
+{
+  "name": "One Credit Financial Solutions",
+  "description": "Premium financial services website for One Credit Financial Solutions offering Personal, Home, Business, Vehicle, and Property Loans in Hyderabad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
